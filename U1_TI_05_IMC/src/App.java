@@ -15,7 +15,8 @@ public class App {
         persona.setAltura(altura);
         double imc = persona.CalcularIMC(peso, altura);
         String clasificacion = persona.ClasificacionIMC(imc);
-        System.out.printf("Hola %s, tu IMC es %.2f y tu clasificación es: %s%n", persona.getNombre(), imc, clasificacion);
+        System.out.println("Hola " + persona.getNombre() + ", tu IMC es " + String.format("%.2f", imc) + " y tu clasificación es: " + clasificacion);
+        //System.out.printf("Hola %s, tu IMC es %.2f y tu clasificación es: %s%n", persona.getNombre(), imc, clasificacion);
         scanner.close();
 
     }
