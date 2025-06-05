@@ -6,34 +6,37 @@ import Model.UsuarioSeguro;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
-        UsuarioSeguro Usuario = new UsuarioSeguro();
-        
+        UsuarioSeguro usuario = new UsuarioSeguro();
+
         System.out.println("REGISTRO DE USUARIO");
-        System.out.println("Ingrese su nombre de usuario:");
-        Usuario.setNombreUsuario(scanner.nextLine());
         
-        System.out.println("Ingrese su contraseña (debe contener 8+ caracteres, mayúscula, minúscula y número):");
-        Usuario.setContraseña(scanner.nextLine());
+        while(usuario.getNombreUsuario() == null) {
+            System.out.print("Ingrese nombre de usuario: ");
+            usuario.setNombreUsuario(scanner.nextLine());
+        }
         
-        System.out.println("\nAUTENTICACION");
-        System.out.println("Ingrese su contraseña para acceder:");
-        String intentoContraseña = scanner.nextLine();
+        while(usuario.getPassword() == null) {
+            System.out.print("Ingrese contraseña: ");
+            usuario.setPassword(scanner.nextLine());
+        }
+
+        System.out.println("\nAUTENTICACIÓN");
+        System.out.print("Ingrese su contraseña: ");
+        String intento = scanner.nextLine();
         
-        if(Usuario.Autenticar(intentoContraseña)) {
-            System.out.println("\nAutenticacion exitosa!");
-            System.out.println("Bienvenido: " + Usuario.getNombreUsuario());
-            System.out.println("Código ASCII de tu nombre:");
-            for (int i = 0; i < Usuario.getNombreUsuario().length(); i++) {              
-            char letra = Usuario.getNombreUsuario().charAt(i);
+        if(usuario.autenticar(intento)) {
+            System.out.println("Acceso concedido");
+            System.out.println("Bienvenido: " + usuario.getNombreUsuario());
+            System.out.print("Su nombre de usuario en código ASCII: ");
+            for (int i = 0; i < usuario.getNombreUsuario().length(); i++) {              
+            char letra = usuario.getNombreUsuario().charAt(i);
             int codigoAscii = (int) letra;
             System.out.print(" (" + codigoAscii + ")");
             }
         } else {
-            System.out.println("\nAutenticacion fallida. Contraseña incorrecta.");
+            System.out.println("Acceso denegado");
         }
-        
+
         scanner.close();
     }
-
 }
-
