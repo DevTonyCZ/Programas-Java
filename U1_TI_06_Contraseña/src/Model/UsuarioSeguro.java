@@ -41,7 +41,7 @@ public class UsuarioSeguro {
     }
 
         if (!tieneMayuscula) {
-            System.out.println("Error: La contraseña debe contener al menos una mayúscula");
+            System.out.println("Error waos: La contraseña debe contener al menos una mayúscula");
             return;
         }
         
