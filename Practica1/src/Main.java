@@ -38,6 +38,28 @@ public class Main {
         }
 
         System.out.println("\nTotal de unidades en inventario: " + inventario.total());
+
+        System.out.print("\n¿Desea agregar un producto? (s/n): ");
+        String opcion2 = scanner.nextLine();
+
+        if (opcion2.equalsIgnoreCase("s")) {
+            System.out.print("\nIngrese el código del nuevo producto: ");
+            String codigo = scanner.nextLine();
+
+            System.out.print("Ingrese la cantidad: ");
+            int cantidad = scanner.nextInt();
+            scanner.nextLine();
+
+            Producto producto = new Producto(codigo, cantidad);
+            if (!inventario.agregarProducto(producto)) {
+                System.out.println("¡Inventario lleno! No se pudo agregar el producto.");
+            } else {
+                System.out.println("Producto agregado correctamente.");
+                inventario.mostrarProductos();
+            }
+        }
+
+        System.out.println("\nTotal de unidades en inventario: " + inventario.total());
         scanner.close();
     }
 }
