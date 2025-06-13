@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 
         Label label = new Label("Label 1");
-        Label label2 = new Label("Labe2");
+        Label label2 = new Label("Labe 2");
         Button button = new Button("Button Saludar");
         Button button2 = new Button("Button No saludar");
 
