@@ -10,8 +10,8 @@ public class EmpleadoTiempoCompleto extends Empleado{
     @Override
     public double calcularSalario() {
         System.out.println("Nombre: " + getNombre());
-        System.out.println("Salario:" + getSalarioBase());
-        System.out.println("Beneficio:" + beneficios);
+        System.out.println("Salario: " + getSalarioBase());
+        System.out.println("Beneficio: " + beneficios);
         return getSalarioBase();
     }
 

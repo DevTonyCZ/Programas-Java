@@ -12,7 +12,7 @@ public class EmpleadoPorHoras extends Empleado{
         System.out.println("Nombre: " + getNombre());
         System.out.println("Horas trabajadas: " + horasTrabajadas);
         System.out.println("Salario base por hora: " + getSalarioBase());
-        System.out.println("Salario:" + (getSalarioBase() * horasTrabajadas));
+        System.out.println("Salario: " + (getSalarioBase() * horasTrabajadas));
         return (getSalarioBase() * horasTrabajadas);
     }
 
