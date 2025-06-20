@@ -55,8 +55,7 @@ class Garage {
     public void mostrarEstado() {
         System.out.println("\nEstado actual del garaje:");
         for (int i = 0; i < espacios.length; i++) {
-            System.out.println("Espacio " + i + ": " + 
-                (espacios[i] != null ? espacios[i] : "Vacío"));
+            System.out.println("Espacio " + i + ": " + (espacios[i] != null ? espacios[i] : "Vacío"));
         }
         System.out.println("Total ocupado: " + contarVehiculos() + "/" + espacios.length);
     }
